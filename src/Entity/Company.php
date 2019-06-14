@@ -52,6 +52,16 @@ class Company
     private $chiffreAffaire;
 
     /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $status;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $state;
+
+    /**
      * @ORM\Column(type="string", length=255)
      */
     private $gerant;
@@ -153,6 +163,30 @@ class Company
     public function setGerant(string $gerant): self
     {
         $this->gerant = $gerant;
+
+        return $this;
+    }
+
+    public function getStatus(): ?int
+    {
+        return $this->status;
+    }
+
+    public function setStatus(?int $status): self
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    public function getState(): ?bool
+    {
+        return $this->state;
+    }
+
+    public function setState(?bool $state): self
+    {
+        $this->state = $state;
 
         return $this;
     }
